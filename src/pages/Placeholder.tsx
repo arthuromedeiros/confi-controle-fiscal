@@ -1,1 +1,0 @@
-export function Placeholder({title}:{title:string}){return <section><h1>{title}</h1><div className="panel"><p>MÓDULO PREPARADO PARA CONEXÃO AO SUPABASE.</p></div></section>}
