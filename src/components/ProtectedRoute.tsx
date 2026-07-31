@@ -1,0 +1,2 @@
+import { Navigate, Outlet } from 'react-router-dom'; import { useAuth } from '../contexts/AuthContext';
+export function ProtectedRoute(){const {session,profile,loading}=useAuth(); if(loading)return <div className="center">CARREGANDO...</div>; if(!session)return <Navigate to="/login" replace/>; if(!profile?.ativo)return <div className="center">ACESSO INATIVO. CONTATE O ADMINISTRADOR.</div>; return <Outlet/>;}

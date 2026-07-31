@@ -1,0 +1,3 @@
+import { NavLink, Outlet } from 'react-router-dom'; import { useAuth } from '../contexts/AuthContext';
+const links=[['/','DASHBOARD'],['/empresas','EMPRESAS'],['/rotinas','ROTINAS'],['/guias','GUIAS'],['/pendencias','PENDÊNCIAS'],['/repasses','REPASSES'],['/colaboradores','COLABORADORES']];
+export function AppLayout(){const {profile,signOut}=useAuth();return <div className="shell"><header><strong>CONFI <b>CONSULTORIA</b></strong><span>{profile?.nome} · {profile?.perfil}</span><button onClick={signOut}>SAIR</button></header><aside>{links.map(([to,label])=><NavLink key={to} to={to}>{label}</NavLink>)}</aside><main><Outlet/></main></div>}
